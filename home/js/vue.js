@@ -1,19 +1,9 @@
- const app = Vue.createApp({
+  const app = Vue.createApp({
    data() {
     return {
-      manyFoods: [
-        'img_burrito.svg',
-        'img_salad.svg',
-        'img_cake.svg',
-        'img_soup.svg',
-        'img_fish.svg',
-        'img_pizza.svg',
-        'img_rice.svg'
-      ]
+     message: "Hello World!"
     }
    }
   })
-  
   app.mount('#app')
-
-
+ 

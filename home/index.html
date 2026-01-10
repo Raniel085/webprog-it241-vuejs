@@ -3,6 +3,7 @@
 <head>
 <title>My first Vue page</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/images.css">
 </head>
 <body>
 
@@ -100,33 +101,22 @@
 <div id="app">
   {{ I Love U PO MA! }}
 </div>
+
+
+<div id="app2">
+
+  <div>
+    <img v-for="x in manyFoods" v-bind:src="x">
+  </div>
+
+</div>
+
  
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
  
 <script src="js/vue.js"></script>
+<script src="js/images.js"></script>
 
-<script>
-  const app = Vue.createApp({
-   data() {
-    return {
-      manyFoods: [
-        'img_burrito.svg',
-        'img_salad.svg',
-        'img_cake.svg',
-        'img_soup.svg',
-        'img_fish.svg',
-        'img_pizza.svg',
-        'img_rice.svg'
-      ]
-    }
-   }
-  })
-  
-  app.mount('#app')
-
-</script>
-
- 
 </body>
 </html>
 
