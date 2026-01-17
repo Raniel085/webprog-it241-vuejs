@@ -12,9 +12,9 @@
 
                       return {
 
-                              name: 'Apples and Bananas',
+                              name: 'Mango and Orange',
 
-                                    message: 'I like apples and bananas'
+                                    message: 'I like Mango and Orange'
 
                       };
 
