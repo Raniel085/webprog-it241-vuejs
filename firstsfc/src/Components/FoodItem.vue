@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
   .Mango {
     border: dashed black 1px;
     display: inline-block;
