@@ -1,19 +1,10 @@
 <template>
-  <div>
-    <h2>{{ name }}</h2>
-    <p>{{ message }}</p>
-  </div>
+  <h1>Food</h1>
+  <food-item/>
+  <food-item/>
+  <food-item/>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      name: 'Apples',
-      message: 'I like apples'
-    }
-  }
-};
-</script>
+<script></script>
 
 <style></style>
