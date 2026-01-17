@@ -91,21 +91,94 @@ export default {
 </script>
 
 <style scoped>
-/* Paste your existing CSS from style.css here */
-.outline {
-  -webkit-text-stroke: 1px white;
-  color: transparent;
+:component {
+  --bg-dark: #0a0a0a;
+  --accent-purple: #8a2be2;
+  --accent-blue: #00d4ff;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --glass-bg: rgba(255, 255, 255, 0.05);
 }
+
+.profile-body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Hero Section Styles */
+.hero-section {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.outline {
+  -webkit-text-stroke: 1.5px var(--accent-blue);
+  color: transparent;
+  font-family: 'Syncopate', sans-serif;
+  text-transform: uppercase;
+}
+
+/* Bento Grid Layout */
 .content-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
 .bento-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 15px;
+  background: var(--glass-bg);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 30px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bento-item:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-purple);
+}
+
+/* Label & Typography */
+.label {
+  color: var(--accent-blue);
+  font-size: 0.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: 900;
+  margin-bottom: 15px;
+}
+
+/* Custom Button */
+.btn-custom {
+  display: inline-block;
+  padding: 12px 30px;
+  background: linear-gradient(45deg, var(--accent-purple), var(--accent-blue));
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  transition: opacity 0.3s;
+}
+
+.btn-custom:hover {
+  opacity: 0.8;
+  color: white;
+}
+
+/* Gallery Images */
+.gallery-wrapper img {
+  width: 100%;
+  border-radius: 15px;
+  border: 2px solid var(--accent-purple);
 }
 </style>
