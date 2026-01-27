@@ -2,12 +2,11 @@
 import { ref, onMounted } from 'vue'
 import { supabase } from './lib/supabaseClient'
 
-// 1. Logic to fetch your data
 const instruments = ref([])
 
 async function getInstruments() {
   const { data } = await supabase.from('instruments').select()
-  instruments.value = data
+  if (data) instruments.value = data
 }
 
 onMounted(() => {
@@ -16,19 +15,36 @@ onMounted(() => {
 </script>
 
 <template>
-  <h1>Food</h1>
-  
-  <food-item />
-  <personal-profile />
-  <Comment-form />
-  <Comment />
+  <div id="app-container">
+    <h1>Food</h1>
+    
+    <div class="flex-layout">
+      <food-item />
+      <comment-form />
+    </div>
 
-  <hr />
+    <hr />
 
-  <h3>Instruments from Database:</h3>
-  <ul>
-    <li v-for="instrument in instruments" :key="instrument.id">
-      {{ instrument.name }}
-    </li>
-  </ul>
+    <comment />
+
+    <personal-profile />
+
+    <div v-if="instruments.length > 0">
+      <h3>Instruments:</h3>
+      <ul>
+        <li v-for="instrument in instruments" :key="instrument.id">
+          {{ instrument.name }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </template>
+
+<style>
+/* Styling to match the "inline-block" look in your screenshot */
+.flex-layout {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+</style>
