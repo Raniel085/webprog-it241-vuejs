@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue'
 import { supabase } from './lib/supabaseClient'
 
+// 1. Logic to fetch your data
 const instruments = ref([])
 
 async function getInstruments() {
@@ -10,12 +11,24 @@ async function getInstruments() {
 }
 
 onMounted(() => {
-   getInstruments()
+  getInstruments()
 })
 </script>
 
 <template>
+  <h1>Food</h1>
+  
+  <food-item />
+  <personal-profile />
+  <comment-form />
+  <comment />
+
+  <hr />
+
+  <h3>Instruments from Database:</h3>
   <ul>
-    <li v-for="instrument in instruments" :key="instrument.id">{{ instrument.name }}</li>
+    <li v-for="instrument in instruments" :key="instrument.id">
+      {{ instrument.name }}
+    </li>
   </ul>
 </template>
