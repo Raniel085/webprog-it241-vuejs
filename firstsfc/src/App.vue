@@ -20,8 +20,8 @@ onMounted(() => {
   
   <food-item />
   <personal-profile />
-  <comment-form />
-  <comment />
+  <Comment-form />
+  <Comment />
 
   <hr />
 
